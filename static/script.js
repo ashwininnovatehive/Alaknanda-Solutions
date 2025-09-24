@@ -18,30 +18,21 @@
                 });
             });
 
-            // Navbar scroll effect
+            // Navbar scroll effect - background change on scroll
             const navbar = document.querySelector('.navbar');
-            let lastScrollTop = 0;
 
             window.addEventListener('scroll', function() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // Scrolling down
-                    navbar.style.transform = 'translateY(-100%)';
-                } else {
-                    // Scrolling up
-                    navbar.style.transform = 'translateY(0)';
-                }
-
                 if (scrollTop > 50) {
                     navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
                     navbar.style.backdropFilter = 'blur(10px)';
+                    navbar.style.boxShadow = '0 2px 20px rgba(26, 54, 93, 0.1)';
                 } else {
                     navbar.style.backgroundColor = 'white';
                     navbar.style.backdropFilter = 'none';
+                    navbar.style.boxShadow = '0 2px 10px rgba(26, 54, 93, 0.1)';
                 }
-
-                lastScrollTop = scrollTop;
             });
 
             // Animate elements on scroll
